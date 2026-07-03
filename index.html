@@ -3,44 +3,33 @@
 <head>
   <title>LeafySMP</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
 </head>
+
 <body>
 
-<div class="navbar">
+<header>
+  <a class="logo" href="index.html">
+    <img src="images/logo.png">
+  </a>
 
-  <div class="left">
-    <img src="images/logo.png" class="logo">
-    <span>LeafySMP</span>
-  </div>
-
-  <div class="center">
+  <nav>
     <a href="index.html">Home</a>
     <a href="store.html">Store</a>
     <a href="rules.html">Rules</a>
+  </nav>
+
+  <div class="right">
+    <input id="username" placeholder="Put your username">
+    <button onclick="setUser()">Join</button>
   </div>
+</header>
 
+<main>
+  <h1>Welcome to LeafySMP</h1>
+  <p>Survival • Economy • PvP • Events</p>
+</main>
 
-<div class="right">
-
-  <input id="topUsername" placeholder="Put your username">
-
-  <button onclick="setUser()">Join</button>
-
-</div>
-
-</div>
-
-<div class="hero">
-  <h1>LeafySMP</h1>
-  <p>Ultimate Minecraft SMP Network</p>
-
-  <div class="ip-box">
-    <span>play.leafysmp.ir</span>
-    <button onclick="copyIP()">Copy IP</button>
-  </div>
-</div>
-
-<link rel="icon" type="image/png" href="images/logo.png">
 <script src="script.js"></script>
 </body>
 </html>
