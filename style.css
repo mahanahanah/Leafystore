@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f0f0f;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #111;
+  position: sticky;
+  top: 0;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.center a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.right button {
+  background: #00c853;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.hero {
+  text-align: center;
+  padding: 120px;
+}
+
+.ip-box {
+  margin-top: 20px;
+  display: inline-flex;
+  gap: 10px;
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.page {
+  padding: 50px;
+}
+
+.rank {
+  background: #1e1e1e;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.login-box {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+}
+.login-box {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+
+  width: 260px;
+  background: #1e1e1e;
+
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.login-box input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+}
