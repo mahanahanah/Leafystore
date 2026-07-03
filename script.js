@@ -50,27 +50,20 @@ function rateLimit() {
 }
 let loginAttempts = 0;
 
-function login() {
-  if (loginAttempts >= 5) {
-    alert("Too many attempts. Wait 1 minute.");
+function setUser() {
+  let name = document.getElementById("topUsername").value;
+
+  if (!name) {
+    alert("Put your username");
     return;
   }
 
-  let name = document.getElementById("loginName").value;
-  let pass = document.getElementById("loginPass").value;
+  localStorage.setItem("mc_user", name);
 
-  let savedName = localStorage.getItem("mc_user");
-  let savedPass = localStorage.getItem("mc_pass");
+  alert("Logged in as " + name);
 
-  if (name === savedName && pass === savedPass) {
-    loginAttempts = 0;
-    localStorage.setItem("mc_logged", "true");
-    alert("Welcome " + name);
-    closeLogin();
-  } else {
-    loginAttempts++;
-    alert("Wrong login");
-  }
+  document.getElementById("topUsername").value = "";
+}
 }
 document.addEventListener("keydown", function(e) {
   if (
@@ -81,4 +74,3 @@ document.addEventListener("keydown", function(e) {
     e.preventDefault();
   }
 });
-<button onclick="login()">Login</button>
