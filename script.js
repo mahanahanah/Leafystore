@@ -73,4 +73,14 @@ document.addEventListener("keydown", function(e) {
     alert("Developer tools blocked");
     e.preventDefault();
   }
+  function setUser() {
+  let name = document.getElementById("topUsername").value;
+
+  if (!name) return;
+
+  localStorage.setItem("mc_user", name);
+
+  document.querySelector(".right").innerHTML =
+    "<span style='color:white'>👤 " + name + "</span>";
+}
 });
