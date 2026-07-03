@@ -50,20 +50,27 @@ function rateLimit() {
 }
 let loginAttempts = 0;
 
-function setUser() {
-  let name = document.getElementById("topUsername").value;
-
-  if (!name) {
-    alert("Put your username");
+function login() {
+  if (loginAttempts >= 5) {
+    alert("Too many attempts. Wait 1 minute.");
     return;
   }
 
-  localStorage.setItem("mc_user", name);
+  let name = document.getElementById("loginName").value;
+  let pass = document.getElementById("loginPass").value;
 
-  alert("Logged in as " + name);
+  let savedName = localStorage.getItem("mc_user");
+  let savedPass = localStorage.getItem("mc_pass");
 
-  document.getElementById("topUsername").value = "";
-}
+  if (name === savedName && pass === savedPass) {
+    loginAttempts = 0;
+    localStorage.setItem("mc_logged", "true");
+    alert("Welcome " + name);
+    closeLogin();
+  } else {
+    loginAttempts++;
+    alert("Wrong login");
+  }
 }
 document.addEventListener("keydown", function(e) {
   if (
@@ -73,14 +80,4 @@ document.addEventListener("keydown", function(e) {
     alert("Developer tools blocked");
     e.preventDefault();
   }
-  function setUser() {
-  let name = document.getElementById("topUsername").value;
-
-  if (!name) return;
-
-  localStorage.setItem("mc_user", name);
-
-  document.querySelector(".right").innerHTML =
-    "<span style='color:white'>👤 " + name + "</span>";
-}
 });

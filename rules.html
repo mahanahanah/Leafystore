@@ -3,37 +3,101 @@
 <head>
   <title>Rules - LeafySMP</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/logo.png">
 </head>
-
 <body>
 
-<header>
-  <a class="logo" href="index.html">
-    <img src="images/logo.png">
-  </a>
+<!-- NAVBAR -->
+<div class="navbar">
 
-  <nav>
+  <div class="left">
+    <img src="images/logo.png" class="logo">
+    <span>LeafySMP</span>
+  </div>
+
+  <div class="center">
     <a href="index.html">Home</a>
     <a href="store.html">Store</a>
     <a href="rules.html">Rules</a>
-  </nav>
-</header>
+  </div>
 
-<main>
+  <div class="right">
+    <button onclick="openLogin()">Login</button>
+    <button onclick="openRegister()">Register</button>
+  </div>
 
-<h1>Server Rules</h1>
+</div>
 
-<ul>
-  <li>No cheating or hacking</li>
-  <li>No duping or exploiting</li>
-  <li>No toxic behaviour</li>
-  <li>Respect all players</li>
-  <li>No spam or lag machines</li>
-</ul>
+<!-- PAGE CONTENT -->
+<div class="page">
 
-</main>
+  <h1>📜 Server Rules</h1>
+
+  <div class="rank">
+    <h2>🚫 General Rules</h2>
+    <ul>
+      <li>No hacking, cheating, or using mods that give unfair advantage</li>
+      <li>No exploiting bugs or duplication glitches</li>
+      <li>No spam or advertising other servers</li>
+      <li>Respect all players and staff</li>
+      <li>No racist, toxic, or inappropriate behavior</li>
+    </ul>
+  </div>
+
+  <div class="rank">
+    <h2>⚔️ PvP Rules</h2>
+    <ul>
+      <li>No combat logging</li>
+      <li>No safezone abuse during combat</li>
+      <li>No teaming in unfair ways (if disallowed by server mode)</li>
+    </ul>
+  </div>
+
+  <div class="rank">
+    <h2>🏠 Base & Griefing Rules</h2>
+    <ul>
+      <li>Griefing is allowed outside protected areas (if SMP rules allow)</li>
+      <li>No stealing in safe regions</li>
+      <li>No abusing claims or protections</li>
+    </ul>
+  </div>
+
+  <div class="rank">
+    <h2>🔧 Staff Rules</h2>
+    <ul>
+      <li>Do not impersonate staff</li>
+      <li>Staff decisions are final</li>
+      <li>Report bugs instead of exploiting them</li>
+    </ul>
+  </div>
+
+  <div class="rank">
+    <h2>⚠️ Punishments</h2>
+    <ul>
+      <li>Breaking rules may result in warnings, mutes, kicks, or bans</li>
+      <li>Severe exploits = permanent ban</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- LOGIN + REGISTER -->
+<div class="login-box" id="loginBox">
+  <h3>Login</h3>
+  <input id="loginName" placeholder="Minecraft Username">
+  <input id="loginPass" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <button onclick="closeLogin()">Close</button>
+</div>
+
+<div class="login-box" id="registerBox">
+  <h3>Register</h3>
+  <input id="regName" placeholder="Minecraft Username">
+  <input id="regPass" type="password" placeholder="Password">
+  <button onclick="register()">Create Account</button>
+  <button onclick="closeRegister()">Close</button>
+</div>
 
 <script src="script.js"></script>
+
 </body>
 </html>

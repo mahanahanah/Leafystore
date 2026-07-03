@@ -5,64 +5,88 @@ body {
   color: white;
 }
 
-header {
+.navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px;
+  padding: 10px 20px;
   background: #111;
+  position: sticky;
+  top: 0;
 }
 
-.logo img {
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
   width: 40px;
 }
 
-nav a {
+.center a {
   margin: 0 10px;
   color: white;
   text-decoration: none;
 }
 
-nav a:hover {
-  color: #00ff7b;
-}
-
-.right {
-  display: flex;
-  gap: 10px;
-}
-
-.right input {
-  padding: 6px;
-  border-radius: 6px;
-  border: none;
-}
-
 .right button {
-  padding: 6px 12px;
+  background: #00c853;
   border: none;
+  padding: 8px 12px;
   border-radius: 6px;
-  background: linear-gradient(90deg, #00ff7b, #00c3ff);
-  color: white;
-  cursor: pointer;
 }
 
-main {
-  padding: 30px;
+.hero {
+  text-align: center;
+  padding: 120px;
 }
 
-.card {
-  background: #1a1a1a;
-  padding: 20px;
-  margin: 15px 0;
+.ip-box {
+  margin-top: 20px;
+  display: inline-flex;
+  gap: 10px;
+  background: #222;
+  padding: 10px;
   border-radius: 10px;
 }
 
-.card button {
-  margin-top: 10px;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 6px;
-  background: #00ff7b;
-  cursor: pointer;
+.page {
+  padding: 50px;
+}
+
+.rank {
+  background: #1e1e1e;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.login-box {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+}
+.login-box {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+
+  width: 260px;
+  background: #1e1e1e;
+
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.login-box input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
 }

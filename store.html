@@ -3,89 +3,134 @@
 <head>
   <title>Store - LeafySMP</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/logo.png">
 </head>
-
 <body>
 
-<header>
-  <a class="logo" href="index.html">
-    <img src="images/logo.png">
-  </a>
+<!-- NAVBAR -->
+<div class="navbar">
 
-  <nav>
+  <div class="left">
+    <img src="images/logo.png" class="logo">
+    <span>LeafySMP</span>
+  </div>
+
+  <div class="center">
     <a href="index.html">Home</a>
     <a href="store.html">Store</a>
     <a href="rules.html">Rules</a>
-  </nav>
-</header>
+  </div>
 
-<main>
+  <div class="right">
+    <button onclick="openLogin()">Login</button>
+    <button onclick="openRegister()">Register</button>
+  </div>
 
-<h1>Store</h1>
-
-<!-- VIP -->
-<div class="card">
-  <h2>VIP</h2>
-  <p>・/hat ・/craft ・/anvil<br>
-     ・VIP Prefix ・+1 Home<br>
-     ・Nickname ・VIP Kit<br>
-     ・20s RTP Cooldown</p>
-  <p><b>Price:</b> 100K Toman</p>
-  <button onclick="buy('VIP')">Buy</button>
 </div>
 
-<!-- GOLD -->
-<div class="card">
-  <h2>Gold</h2>
-  <p>・/hat /craft /anvil /loom /grindstone<br>
-     ・Gold Prefix ・+2 Home<br>
-     ・Nickname ・Gold Kit<br>
-     ・20s RTP Cooldown</p>
-  <p><b>Price:</b> 250K Toman</p>
-  <button onclick="buy('Gold')">Buy</button>
+<!-- PAGE WRAPPER -->
+<div class="page">
+
+<h1>🛒 LeafySMP Store</h1>
+<p>Select items to add them to your Discord ticket</p>
+
+<!-- CART -->
+<div class="rank">
+<h2>🧾 Your Cart</h2>
+
+<textarea id="ticketBox" rows="12" style="width:100%;"></textarea>
+
+<br><br>
+<button onclick="copyTicket()">Copy Ticket</button>
 </div>
 
-<!-- ELITE -->
-<div class="card">
-  <h2>Elite</h2>
-  <p>・All Gold features<br>
-     ・/enderchest /stonecutter /cartography<br>
-     ・Elite Prefix ・+3 Home<br>
-     ・Shards Everywhere<br>
-     ・Elite Kit</p>
-  <p><b>Price:</b> 325K Toman</p>
-  <button onclick="buy('Elite')">Buy</button>
+<!-- RANKS -->
+<div class="rank">
+<h2>VIP - 100K</h2>
+<ul>
+  <li>/hat</li>
+  <li>/craft</li>
+  <li>/anvil</li>
+  <li>VIP Prefix</li>
+  <li>+1 Home</li>
+  <li>VIP Kit</li>
+</ul>
+<button onclick="addItem('VIP', '100K')">Add to Cart</button>
 </div>
 
-<!-- SPONSOR -->
-<div class="card">
-  <h2>Sponsor</h2>
-  <p>・All commands unlocked<br>
-     ・Custom Prefix<br>
-     ・+3 Home<br>
-     ・Shards Everywhere<br>
-     ・Sponsor Kit<br>
-     ・No RTP Cooldown</p>
-  <p><b>Price:</b> 1.250M Toman</p>
-  <button onclick="buy('Sponsor')">Buy</button>
+<div class="rank">
+<h2>Gold - 250K</h2>
+<ul>
+  <li>/hat /craft /anvil /loom</li>
+  <li>Gold Prefix</li>
+  <li>+2 Homes</li>
+  <li>Gold Kit</li>
+</ul>
+<button onclick="addItem('Gold', '250K')">Add to Cart</button>
+</div>
+
+<div class="rank">
+<h2>Elite - 325K</h2>
+<ul>
+  <li>/enderchest</li>
+  <li>/stonecutter</li>
+  <li>Elite Prefix</li>
+  <li>+3 Homes</li>
+</ul>
+<button onclick="addItem('Elite', '325K')">Add to Cart</button>
+</div>
+
+<div class="rank">
+<h2>Sponsor - 1.25M</h2>
+<ul>
+  <li>Custom prefix</li>
+  <li>No RTP cooldown</li>
+  <li>All perks unlocked</li>
+</ul>
+<button onclick="addItem('Sponsor', '1.25M')">Add to Cart</button>
 </div>
 
 <!-- KEYS -->
-<div class="card">
-  <h2>Crate Keys</h2>
-  <p>
-    Iron Key - 15K<br>
-    Diamond Key - 25K<br>
-    Emerald Key - 40K<br>
-    Redstone Key - 55K<br>
-    Amethyst Key - 80K
-  </p>
-  <button onclick="buy('Keys')">Buy Keys</button>
+<div class="rank">
+<h2>🔑 Crate Keys</h2>
+
+<p>Iron Key - 15K</p>
+<button onclick="addItem('Iron Key','15K')">Add</button>
+
+<p>Diamond Key - 25K</p>
+<button onclick="addItem('Diamond Key','25K')">Add</button>
+
+<p>Emerald Key - 40K</p>
+<button onclick="addItem('Emerald Key','40K')">Add</button>
+
+<p>Redstone Key - 55K</p>
+<button onclick="addItem('Redstone Key','55K')">Add</button>
+
+<p>Amethyst Key - 80K</p>
+<button onclick="addItem('Amethyst Key','80K')">Add</button>
+
 </div>
 
-</main>
+</div>
+
+<!-- LOGIN -->
+<div class="login-box" id="loginBox">
+  <h3>Login</h3>
+  <input id="loginName" placeholder="Minecraft Username">
+  <input id="loginPass" type="password">
+  <button onclick="login()">Login</button>
+  <button onclick="closeLogin()">Close</button>
+</div>
+
+<!-- REGISTER -->
+<div class="login-box" id="registerBox">
+  <h3>Register</h3>
+  <input id="regName" placeholder="Minecraft Username">
+  <input id="regPass" type="password">
+  <button onclick="register()">Create Account</button>
+  <button onclick="closeRegister()">Close</button>
+</div>
 
 <script src="script.js"></script>
+
 </body>
 </html>

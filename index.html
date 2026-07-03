@@ -3,32 +3,60 @@
 <head>
   <title>LeafySMP</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/logo.png">
 </head>
-
 <body>
 
-<header>
-  <a class="logo" href="index.html">
-    <img src="images/logo.png">
-  </a>
+<div class="navbar">
 
-  <nav>
+  <div class="left">
+    <img src="images/logo.png" class="logo">
+    <span>LeafySMP</span>
+  </div>
+
+  <div class="center">
     <a href="index.html">Home</a>
     <a href="store.html">Store</a>
     <a href="rules.html">Rules</a>
-  </nav>
+  </div>
 
   <div class="right">
-    <input id="username" placeholder="Put your username">
-    <button onclick="setUser()">Join</button>
+    <button onclick="openLogin()">Login</button>
+    <button onclick="openRegister()">Register</button>
   </div>
-</header>
 
-<main>
-  <h1>Welcome to LeafySMP</h1>
-  <p>Survival • Economy • PvP • Events</p>
-</main>
+</div>
+
+<div class="hero">
+  <h1>LeafySMP</h1>
+  <p>Ultimate Minecraft SMP Network</p>
+
+  <div class="ip-box">
+    <span>play.leafysmp.ir</span>
+    <button onclick="copyIP()">Copy IP</button>
+  </div>
+</div>
+
+<!-- LOGIN -->
+<div class="login-box" id="loginBox">
+  <h3>Login</h3>
+
+  <input id="loginName" placeholder="Minecraft Username">
+  <input id="loginPass" type="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+  <button onclick="closeLogin()">Close</button>
+</div>
+
+<!-- REGISTER -->
+<div class="login-box" id="registerBox">
+  <h3>Register</h3>
+
+  <input id="regName" placeholder="Minecraft Username">
+  <input id="regPass" type="password" placeholder="Password">
+
+  <button onclick="register()">Create Account</button>
+  <button onclick="closeRegister()">Close</button>
+</div>
 
 <script src="script.js"></script>
 </body>
