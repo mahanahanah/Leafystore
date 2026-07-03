@@ -90,3 +90,31 @@ body {
   margin: 5px 0;
   padding: 8px;
 }
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#topUsername {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  color: white;
+  outline: none;
+  width: 160px;
+}
+
+#topUsername::placeholder {
+  color: #777;
+}
+
+.right button {
+  background: linear-gradient(90deg, #00ff7b, #00c3ff);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
