@@ -81,3 +81,4 @@ document.addEventListener("keydown", function(e) {
     e.preventDefault();
   }
 });
+<button onclick="login()">Login</button>
